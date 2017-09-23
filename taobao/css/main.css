@@ -118,6 +118,9 @@
   position: relative;
   font-size: 13px;
 }
+.service-bd li.on {
+  background-color: #f94a14;
+}
 .service-bd li .service-icons {
   color: #FF905B;
   font-size: 18px;
@@ -149,6 +152,161 @@
 .service-ft img {
   width: 190px;
   height: 40px;
+}
+
+.service-float {
+  display: none;
+  position: absolute;
+  left: 188px;
+  top: 33px;
+  padding: 0 0 0 18px;
+  width: 692px;
+  height: 518px;
+  border: 2px solid #F94A14;
+  box-shadow: 2px 2px 0 #dcdadb;
+  background-color: #FFF;
+  color: #333;
+  font-size: 12px;
+  z-index: 10000;
+}
+.service-float .service-float-item {
+  display: none;
+}
+.service-float .service-float-item .service-fi-links {
+  padding-top: 25px;
+  width: 427px;
+  height: 475px;
+  overflow: hidden;
+  padding-right: 10px;
+  float: left;
+}
+.service-float .service-float-item .service-fi-links .service-panel {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.service-float .service-float-item .service-fi-links .service-panel h5 {
+  height: 28px;
+  position: relative;
+  border-bottom: 1px solid #e0e0e0;
+  line-height: 28px;
+}
+.service-float .service-float-item .service-fi-links .service-panel h5 img {
+  width: 28px;
+  height: 28px;
+}
+.service-float .service-float-item .service-fi-links .service-panel h5 em {
+  font-style: normal;
+  font-size: 14px;
+  position: relative;
+  left: 4px;
+  bottom: 6px;
+}
+.service-float .service-float-item .service-fi-links .service-panel h5 span {
+  font-size: 12px;
+  right: -6px;
+  position: absolute;
+  font-weight: 400;
+  top: 2px;
+}
+.service-float .service-float-item .service-fi-links .service-panel h5 span .tb-icon {
+  position: relative;
+  left: -4px;
+  font-size: 12px;
+}
+.service-float .service-float-item .service-fi-links .service-panel p {
+  height: 94px;
+  overflow: hidden;
+  padding: 8px 0;
+  line-height: 24px;
+  margin-bottom: 22px;
+}
+.service-float .service-float-item .service-fi-links .service-panel p a {
+  color: #666;
+  display: inline-block;
+  margin-right: 12px;
+  white-space: nowrap;
+}
+.service-float .service-float-item .service-rmd {
+  float: left;
+  width: 240px;
+  padding: 7px 0;
+  padding-left: 15px;
+  padding-top: 32px;
+  position: relative;
+  background: #f4f4f4;
+  height: 479px;
+}
+.service-float .service-float-item .service-rmd h3 {
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  width: 114px;
+  line-height: 20px;
+  height: 20px;
+  font-size: 14px;
+  text-align: center;
+  margin-left: -57px;
+  font-style: normal;
+  color: #3c3c3c;
+}
+.service-float .service-float-item .service-rmd h3::after {
+  right: -33px;
+}
+.service-float .service-float-item .service-rmd h3::before {
+  left: -33px;
+}
+.service-float .service-float-item .service-rmd h3::after, .service-float .service-float-item .service-rmd h3::before {
+  content: "";
+  position: absolute;
+  height: 0;
+  line-height: 0;
+  border-top: 1px solid  #e6e6e6;
+  width: 45px;
+  top: 50%;
+}
+.service-float .service-float-item .service-rmd h3 .tb-icon {
+  color: #dd4410;
+  font-size: 18px;
+  margin-right: 6px;
+  vertical-align: top;
+}
+.service-float .service-float-item .service-rmd .desc {
+  margin-top: 4px;
+  line-height: 18px;
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+}
+.service-float .service-float-item .service-rmd .service-rmd-list {
+  margin-top: 18px;
+  min-height: 380px;
+}
+.service-float .service-float-item .service-rmd .service-rmd-list a {
+  display: inline-block;
+  width: 110px;
+  height: 110px;
+  background-color: #F5F5F5;
+  position: relative;
+  margin-right: 8px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.service-float .service-float-item .service-rmd .service-rmd-list a img {
+  width: 110px;
+  min-height: 110px;
+}
+.service-float .service-float-item .service-rmd .service-rmd-list a .li-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 4px;
+  overflow: hidden;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #666;
 }
 
 .main {
