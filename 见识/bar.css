@@ -1,0 +1,71 @@
+body {
+  background: #fbfbfb;
+}
+div.top-nav {
+  height: 60px;
+  background: #fff;
+}
+div.flex-box {
+  height: 60px;
+  display: flex;
+  min-width: 1200px;
+  width: 100%;
+  padding: 12px 50px;
+  line-height: 36px;
+  box-shadow: 0 2px 2px 0px #e1e1e9;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 99;
+}
+.logo-a {
+  line-height: 36px;
+  position: relative;
+}
+.left svg{
+  position: absolute;
+  top: -5px;
+}
+.left span {
+  margin-left: 80px;
+  font-family: FZRuiShuiYunS,PingFangSC-Light,PingFang SC,Roboto,Helvetica Neue,Helvetica,Microsoft YaHei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+  color: #2e2e2e;
+  font-size: 14px;
+}
+.right div.search {
+  position: relative;
+  height: 40px;
+  font-size: 12px;
+  float: left;
+  top: -2.5px;
+}
+div.search svg {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #ababab;
+}
+.search input {
+  background-color: #f1f3f4;
+  padding: 11px 13px;
+  padding-left: 34px;
+  width: 240px;
+  height: 40px;
+  border-radius: 2px;
+}
+.ro {
+  margin-left: 40px;
+  float: left;
+  height: 25px;
+  margin-top: 7.5px;
+}
+.ro svg {
+  /*vertical-align: middle;*/
+}
+.avator {
+  margin-left: 40px;
+  float: left;
+}
+.avator img {
+  vertical-align: middle;
+}

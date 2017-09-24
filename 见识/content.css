@@ -1,0 +1,131 @@
+article, aside, footer, header, nav, section {
+    display: block;
+}
+.content {
+  width: 1250px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+nav {
+  display: block;
+  height: 45px;
+}
+nav>div {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  position: fixed;
+  -ms-align-items: center;
+  align-items: center;
+  width: 1200px;
+  height: 45px;
+  background-color: #fbfbfb;
+  border-bottom: 1px solid  #ededed;
+}
+.nav-l ol {
+  width: 340px;
+  margin-left: 15px;
+  display: flex;
+  justify-content: flex-start;
+}
+.nav-l li svg {
+  vertical-align: -.15em;
+  margin: 0 10px;
+  transform: rotate(180deg);
+  /*箭头指向改变*/
+}
+.nav-l ol li {
+  font-size: 14px;
+  font-weight: 700;
+}
+.nav-l li.li-s {
+  font-weight: 400;
+}
+.nav-m {
+  position: relative;
+  height: 45px;
+  font-size: 14px;
+}
+.nav-m ul {
+  width: 550px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  line-height: 42px;
+}
+.nav-m ul li {
+  transition: color .3s,font-weight .3s;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+.nav-m ul li.active{
+  border-bottom: 2px solid #4d70ff;
+  font-weight: 700;
+}
+.main {
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: space-between;
+}
+aside {
+  display: block;
+}
+aside.c-l {
+  width: 280px;
+}
+.c-l section, .c-r section{
+  background: #fff;
+  border-radius: 3px;
+  width: 280px;
+}
+.c-l .img {
+  width: 250px;
+  height: 170px;
+  margin: 0 auto;
+  position: relative;
+  top: -7px;
+}
+.c-l img {
+  border-radius: 2px;
+}
+main {
+  width: 610px;
+}
+aside.c-r {
+  width: 280px;
+}
+div.img-icon {
+  position: absolute;
+  left: 0;
+  top: 25px;
+  font-size: 13px;
+  background: #4d4d4d;
+  text-align: center;
+  height: 29px;
+  color: #fff;
+  line-height: 29px;
+  width: 58px;
+  border-radius: 0 72px 72px 0;
+}
+div.img-bar {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  height: 20px;
+  width: 100%;
+  line-height: 20px;
+  font-size: 14px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000;
+}
+.col {
+  width: 50%;
+  height: 100%;
+  color: #fff;
+  position: relative;
+}
+.col b {
+  font-weight: bolder;
+}
