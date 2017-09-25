@@ -15,7 +15,10 @@ div.flex-box {
   box-shadow: 0 2px 2px 0px #e1e1e9;
   justify-content: space-between;
   position: fixed;
-  z-index: 99;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: #fff;
 }
 .logo-a {
   line-height: 36px;
