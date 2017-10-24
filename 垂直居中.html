@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    /* 垂直居中嵌套效果 */
+    html, body {
+        margin: 0; 
+        padding: 0; 
+        height: 100%;
+        width: 100%;
+    }
+    .parent {
+        height:500px; 
+        width: 500px;
+        position: relative;
+        background-color: #70c578;
+        margin: 0 auto;
+        top: 50%; 
+        /* margin-top: -250px;  */
+        transform: translateY(-50%);
+    }
+    .middle {
+        border-radius: 50% 50%;
+        color: white;
+        /* 标签内文本垂直居中显示 */
+        text-align: center; 
+        line-height: 50px;
+
+        height: 50px;
+        width: 50px;
+        background-color: #3ba9e0;
+        position: absolute;
+    }
+    /* 这里两个middle只使用其一会实现垂直居中效果，都不注释会出现左上角小标签效果 */
+    .middle {
+        top: 50%;
+        left: 50%;
+        margin-top: -25px!important; 
+        margin-left: -25px!important; 
+        margin: 0 auto;
+    }    
+    .middle {
+        top: 0;
+        bottom: 0; 
+        left: 0; 
+        right: 0; 
+        margin: auto;
+    }  
+    </style>    
+</head>
+<body>
+    <div class="parent">
+        <div class="middle">123</div>
+    </div>
+</body>
+</html>

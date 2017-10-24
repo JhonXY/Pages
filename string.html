@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+.arc p {
+  font-weight: 300
+}
+  </style>
+  <div class="arc">
+    <p>134</p>
+    123a1,2,3
+  </div>
+  <script>
+    var arc = document.getElementsByClassName('arc')[0]
+    arc.innerHTML = arc.innerHTML.big() + arc.innerHTML.small() +
+    arc.innerHTML + arc.innerHTML.blink() + arc.innerHTML.sub() +
+    arc.innerHTML.strike().big().sub() +
+    arc.innerHTML.sup() + arc.innerHTML.bold() + arc.innerHTML.fixed() +
+    arc.innerHTML.fontsize(7) + String.fromCharCode(72, 69, 76, 76, 79) +
+    arc.innerHTML.italics() + arc.innerHTML.link() + arc.innerHTML.match(/\d+/)+' //'+
+    arc.innerHTML.match(/\d+/).index + ' //' + arc.innerHTML.match(/\d+/).input +' //'+ 
+    arc.innerHTML.match(4) + arc.innerHTML.match('a') + arc.innerHTML.match([1,2,3]) +
+    arc.innerHTML.replace(/\d+/, '数字') +' //' + arc.innerHTML.search(/\d+/) + arc.innerHTML.search('a') +
+     " //" 
+    
+    console.log('====================================');
+    console.log('slice ' + arc.innerHTML.slice(0, 3));
+    console.log('slice ' + arc.innerHTML.slice(3, 0));
+    console.log('slice ' + arc.innerHTML.slice(0, -1));
+    console.log('substring ' + arc.innerHTML.substring(3, 0));
+    console.log('substring ' + arc.innerHTML.substring(0, 3));
+    console.log('substring ' + arc.innerHTML.substring(0, -1));
+    console.log('substr ' + arc.innerHTML.substr(0, 3));
+    console.log('substr ' + arc.innerHTML.substr(3, 1));
+    console.log('substr ' + arc.innerHTML.substr(-1, 1));
+    console.log('====================================');
+
+    var a = 'a字符串标签'.anchor('name'); // 字符串形式的
+    a ='<a name="name"> a字符串标签 </a>' // 字符串直接写需要注意引号不能重用
+    var b = document.createElement('a')
+      b.innerHTML = 'b元素节点'
+      b.setAttribute('name', 'name');
+    // 'beforebegin': 在该元素本身的前面.
+    // 'afterbegin':只在该元素当中, 在该元素第一个子孩子前面.
+    // 'beforeend':只在该元素当中, 在该元素最后一个子孩子后面.
+    // 'afterend': 在该元素本身的后面.
+    arc.insertAdjacentHTML('beforebegin', a) // 在元素节点前插入同级字符串标签
+    // arc.insertAdjacentHTML('beforebegin', a) // 在元素节点前插入同级字符串标签
+    arc.insertAdjacentElement('afterend', b) // 元素节点调用该方法
+    // arc.insertAdjacentElement('afterend', b) // 元素节点调用该方法
+    // 一个节点对象只会在同一个document中出现一个，所以就像这里两次使用b节点，
+    // 但它只会出现一个
+    // 字符串html节点则不一样，可以调用任意次，所以按需求来使用
+    var c = document.createElement('a')
+    arc.before(c) // 元素节点前插入同级元素节点的方法，兼容性不好
+    
+    console.log('====================================');
+    console.log(a.charAt(0));
+    console.log('====================================');
+    var first = '1'
+    first = first.concat(1,'er',[1,2,3],{1:2,l:2})
+    console.log('====================================');
+    console.log(first);
+    console.log('====================================');
+  </script>
+</body>
+</html>

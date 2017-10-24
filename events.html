@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<ul id="test">
+  <li>
+    <ul class="enter-sensitive">
+      <li>item 1-1</li>
+      <li>item 1-2</li>
+    </ul>
+  </li>
+  <li>
+    <ul class="enter-sensitive">
+      <li>item 2-1</li>
+      <li>item 2-2</li>
+    </ul>
+  </li>
+</ul>
+
+<script>
+  var delegationSelector = ".enter-sensitive";
+
+  document.getElementById("test").addEventListener("mouseover", function (event) {
+    var target = event.target,
+      related = event.relatedTarget,
+      match;
+
+    let x = document.documentElement; 
+    // 解决兼容问题 
+    HTMLElement.prototype.matchesSelector = x.webkitMatchesSelector ||  x.mozMatchesSelector || x.oMatchesSelector || x.msMatchesSelector;  
+
+    function matches(elem, selector) {
+        return elem.matchesSelector(selector);
+    };
+    
+    // search for a parent node matching the delegation selector
+    while (target && target != document && !(match = matches(target, delegationSelector))) {
+      target = target.parentNode;
+    }
+
+    // exit if no matching node has been found
+    if (!match) {
+      return;
+    }
+
+    // loop through the parent of the related target to make sure that it's not a child of the target
+    while (related && related != target && related != document) {
+      related = related.parentNode;
+    }
+
+    // exit if this is the case
+    if (related == target) {
+      return;
+    }
+
+    // the "delegated mouseenter" handler can now be executed
+    // change the color of the text
+    target.style.color = "orange";
+    console.log('====================================');
+    console.log(event.timeStamp); //触发事件时间
+    console.log('====================================');
+    // reset the color after a small amount of time
+    setTimeout(function () {
+      target.style.color = "";
+    }, 500);
+
+
+  }, false);
+</script>
+<ul id="color-list">
+  <li id="addEvent">red</li>
+  <li id="on_click">yellow</li>
+</ul>
+<script type="text/javascript">
+  (function () {
+    var addEvent = document.getElementById("addEvent");
+    addEvent.addEventListener("click", function (e) {
+      alert("我是addEvent1");
+      e.target.focus()
+      console.log('====================================');
+      console.log(e);
+      console.log('====================================');
+    }, false);
+    addEvent.addEventListener("click", function () {
+      alert("我是addEvent2");
+    }, false);
+    addEvent.addEventListener("blur", function () {
+      alert("我失焦了");
+    }, false);
+
+ var on_click = document.getElementById("on_click");
+
+    on_click.onclick = function () {
+      alert("我是click2");
+    }
+    on_click.onblur = function (e) {
+      alert('blur')
+      console.log('====================================');
+      console.log(e);
+      console.log('====================================');
+    }
+  })();
+</script>
+
+
+<style>
+ .fixed{ position: fixed; top: 0; }
+</style>
+<div style="height:200px;background-color:#EFE4B0;"></div>
+
+<div id="fixed" style="height:40px;width:100%;background-color:#7092BE;color:#fff;">这个div到达顶部时悬浮在顶部，不到顶部不悬浮</div>
+
+<div style="height:2000px;background-color:#C3C3C3;"></div>
+
+<script type="text/javascript">
+  var fixedDom = document.getElementById('fixed');
+
+  window.addEventListener('scroll', winScroll);
+
+  function winScroll(e) {
+    var top = getElementViewTop(fixedDom);
+
+    top < 0 ? fixedDom.classList.add("fixed") : fixedDom.classList.remove("fixed");
+  }
+
+  function getElementViewTop(element) {　　　　
+    var actualTop = element.offsetTop,
+      elementScrollTop = document.body.scrollTop;
+
+    　　　　
+    return actualTop - elementScrollTop;　　
+  }
+</script>
+<style>
+  .third, .sec, .first, .inner {
+    height: 100px;
+  }
+  .first {
+    height: 500px;
+    width: 100%;
+  }
+  div.first > * {
+    font-size: 20px;
+  }
+</style>
+<div class="first">
+  first
+  <div class="sec">
+    sec
+    <div class="third">
+      third
+      <div class="inner">inner <span>span</span></div>
+    </div>
+  </div>
+</div>
+<script>
+  (function () {
+    var inner = document.getElementsByClassName('inner')
+    var third = document.getElementsByClassName('third')
+    var sec = document.getElementsByClassName('sec')
+    var first = document.getElementsByClassName('first')
+
+    third[0].addEventListener('click', function(e) {
+      if(e.target.tagName === 'DIV') {
+        console.log('====================================');
+        console.log('代理实现');
+        console.log('====================================');
+      } else {
+        console.log('====================================');
+        console.log('点击错误');
+        console.log('====================================');
+      }
+    } ,false)
+    sec[0].addEventListener('click', function(e) {
+      e.stopPropagation()
+        console.log('====================================');
+        console.log('冒泡实现');
+        console.log('====================================');
+    } ,false)
+  })()
+</script>
+</body>
+</html>
